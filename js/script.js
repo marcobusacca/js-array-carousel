@@ -26,7 +26,7 @@ for (let i = 0; i < img_list.length; i++){
     // INSERIMENTO ELEMENTI HTML ALL'INTERNO DELLA VARIABILE SLIDER CONTENT
     sliderContent += `
     <div class="slide active">
-        <img src"./img/01.webp" alt="slide-${i+1}">
+        <img src="./img/01.webp" alt="slide-${i+1}">
     </div>`
 }
 
