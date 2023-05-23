@@ -63,6 +63,17 @@ previousButton.addEventListener('click', function(){
     
         // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
         allSlides[activeSlides].classList.add('active');
+
+    } else{ // LA VARIABILE CONTANTORE INDICI È ARRIVATA AL PRIMO INDICE, LA FACCIAMO RIPARTIRE DALL'ULTIMO INDICE
+
+        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+        allSlides[activeSlides].classList.remove('active');
+    
+        // RESET VARIABILE CONTANTORE INDICI ELEMENTI HTML CON CLASSE "SLIDE" E CLASSE "ACTIVE"
+        activeSlides = imgList.length - 1;
+    
+        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+        allSlides[activeSlides].classList.add('active');
     }
 })
 
@@ -78,6 +89,17 @@ nextButton.addEventListener('click', function(){
     
         // INCREMENTO VARIABILE CONTANTORE INDICI ELEMENTI HTML CON CLASSE "SLIDE" E CLASSE "ACTIVE"
         activeSlides++;
+    
+        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+        allSlides[activeSlides].classList.add('active');
+
+    } else{ // LA VARIABILE CONTANTORE INDICI È ARRIVATA ALL'ULTIMO INDICE, LA FACCIAMO RIPARTIRE DAL PRIMO INDICE
+
+        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+        allSlides[activeSlides].classList.remove('active');
+    
+        // RESET VARIABILE CONTANTORE INDICI ELEMENTI HTML CON CLASSE "SLIDE" E CLASSE "ACTIVE"
+        activeSlides = 0;
     
         // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
         allSlides[activeSlides].classList.add('active');

@@ -57,6 +57,8 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
 
                 - Aggiungi all'elemento HTML attuale ("slide") con indice(Variabile Contatore), la classe "active";
 
+            - ALTRIMENTI Fai ripartire lo scorrimento dall'ultimo Elemento HTML con classe "slide".
+
 
         - Quando l'utente clicca sul Next Button ALLORA
 
@@ -67,6 +69,8 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
                 - Incrementa la Variabile Contatore che indica gli Indici degli Elementi HTML con classe "slide" e classe "active";
 
                 - Aggiungi all'elemento HTML attuale ("slide") con indice(Variabile Contatore), la classe "active";
+
+            - ALTRIMENTI Fai ripartire lo scorrimento dal primo Elemento HTML con classe "slide".
 
     
 
