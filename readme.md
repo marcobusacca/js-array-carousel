@@ -31,9 +31,9 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
 
         - Inserisci, dentro la Constante che contiene l'elemento HTML con classe "slider", gli Elementi Contenuti all'interno della Variabile di Tipo Stringa;
 
-        - Inserisci una Variabile che contiene tutti gli Elementi HTML con classe "slide";
+        - Inserisci una Constante che contiene tutti gli Elementi HTML con classe "slide";
 
-        - Inserisci una Variabile Contatore degli Elementi HTML con classe "slide";
+        - Inserisci una Variabile Contatore che indica gli Indici degli Elementi HTML con classe "slide" e classe "active";
 
         - Prendi il primo Elemento HTML con classe "slide" ed inseriscigli la classe HTML "active".
 
