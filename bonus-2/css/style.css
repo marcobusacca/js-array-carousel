@@ -3,12 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* SLIDER CONTAINER */
+.slider_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    display: flex;
+}
+
 /* SLIDER */
 .slider{
+    width: 80%;
     height: 100%;
+    border: 5px solid rgb(4, 4, 32);
+    border-right: 0;
+    box-shadow: 0 0 25px rgb(4, 4, 32);
+}
+
+.slider_thumbnail{
+    width: 20%;
+    height: 100%;
+    padding: 50px 0;
     position: relative;
     border: 5px solid rgb(4, 4, 32);
     box-shadow: 0 0 25px rgb(4, 4, 32);
+    background-color: rgba(4, 4, 32, 0.493);
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .slide{
@@ -16,7 +40,15 @@
     display: none;
 }
 
-.slide img{
+.slide_thumbnail{
+    position: relative;
+    width: calc(100% - 10px);
+    margin: 3px 5px;
+    height: calc(100% / 5 - 6px);
+}
+
+.slide img,
+.slide_thumbnail img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -29,18 +61,16 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
         height: 100%;
         display: flex;
         flex-flow: column wrap;
         justify-content: space-between;
-        align-items: center;
     }
 
     .controls > div{
         width: 10px;
         height: 10px;
-        margin: 10px 0;
+        margin: 5px 0;
         padding: 18px;
         border-radius: 50%;
         display: flex;
@@ -58,15 +88,25 @@
     .container{ 
         width: 100%;
         max-width: 1200px;
-        height: 500px;
         margin: 0 auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 
     .active{
         display: block;
+    }
+
+    .opacity::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.532);
+    }
+
+    .selected_slide{
+        border: 3px solid rgba(173, 216, 230, 0.852);
+        box-shadow: 0 0 25px rgba(173, 216, 230, 0.852);
     }
 /* FINE UTILITIES */
