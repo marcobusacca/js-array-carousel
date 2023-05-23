@@ -30,7 +30,7 @@ for (let i = 0; i < imgList.length; i++){
 }
 
 // INSERIMENTO CONTENUTI SLIDER_CONTENT ALL'INTERNO DELLA CONSTANTE SLIDER_ELEMENT
-sliderElement.innerHTML = sliderContent;
+sliderElement.innerHTML += sliderContent;
 
 // DICHIARAZIONE CONSTANTE CONTENENTE TUTTI GLI ELEMENTI HTML CON CLASSE "SLIDE"
 const allSlides = document.querySelectorAll('.slide');
