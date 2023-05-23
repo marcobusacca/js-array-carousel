@@ -13,6 +13,7 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
         - All'interno del contenitore per i bottoni di controllo inserisci il Bottone "Indietro" e il Bottone "Avanti".
         
 
+
     - MILESTONE 2 : Adesso rimuoviamo tutto il markup statico e inseriamo tutte le immagini dinamicamente servendoci dell'array fornito e un semplice ciclo for che concatena un template literal. 
     Tutte le immagini saranno nascoste, tranne la prima, che avrà una classe specifica che la renderà visibile. 
     Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella milestone 1, ma costruito dinamicamente attraverso JavaScript.
@@ -37,4 +38,35 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
 
         - Prendi il primo Elemento HTML con classe "slide" ed inseriscigli la classe HTML "active".
 
+
+
     - MILESTONE 3 : Al click dell'utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
+
+        - Inserisci una Constante che contiene il Previous Button HTML con id "previous";
+
+        - Inserisci una Constante che contiene il Next Button HTML con id "next";
+
+
+        - Quando l'utente clicca sul Previous Button ALLORA
+
+            - ? SE la Variabile Contatore, che indica gli Indici degli Elementi HTML ("slide") è MAGGIORE a 0, ALLORA
+
+                - Rimuovi la classe "active" all'elemento HTML attuale ("slide") con indice(Variabile Contatore);
+
+                - Decrementa la Variabile Contatore che indica gli Indici degli Elementi HTML con classe "slide" e classe "active";
+
+                - Aggiungi all'elemento HTML attuale ("slide") con indice(Variabile Contatore), la classe "active";
+
+
+        - Quando l'utente clicca sul Next Button ALLORA
+
+            - ? SE la Variabile Contatore, che indica gli Indici degli Elementi HTML ("slide") è MINORE di : (lunghezza Array contenente tutte le Immagini - 1), ALLORA
+
+                - Rimuovi la classe "active" all'elemento HTML attuale ("slide") con indice(Variabile Contatore);
+
+                - Incrementa la Variabile Contatore che indica gli Indici degli Elementi HTML con classe "slide" e classe "active";
+
+                - Aggiungi all'elemento HTML attuale ("slide") con indice(Variabile Contatore), la classe "active";
+
+    
+
