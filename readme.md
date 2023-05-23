@@ -17,4 +17,24 @@ PROBLEMA : Dato un array contenente una lista di cinque immagini, creare un caro
     Tutte le immagini saranno nascoste, tranne la prima, che avrà una classe specifica che la renderà visibile. 
     Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella milestone 1, ma costruito dinamicamente attraverso JavaScript.
 
+        - Crea un Array contenente tutte le Immagini da inserire nell'HTML;
+
+        - Inserisci una Constante che contiene l'Elemento HTML con classe "slider";
+
+        - Inserisci una Variabile di Tipo Stringa dove inserirai gli Elementi HTML contenenti le Slide e le Immagini;
+
+        - Crea un CICLO FOR che scorre tutti gli Elementi dell'Array contenente le Immagini;
+
+            - Inserisci una Variabile che contiene, ad ogni iterazione del Ciclo FOR, l'Immagine Corrente dell'Array;
+
+            - Inserisci gli elementi HTML contenenti le Slide (classe "slide") e le Immagini Correnti all'interno della Variabile di Tipo Stringa;
+
+        - Inserisci, dentro la Constante che contiene l'elemento HTML con classe "slider", gli Elementi Contenuti all'interno della Variabile di Tipo Stringa;
+
+        - Inserisci una Variabile che contiene tutti gli Elementi HTML con classe "slide";
+
+        - Inserisci una Variabile Contatore degli Elementi HTML con classe "slide";
+
+        - Prendi il primo Elemento HTML con classe "slide" ed inseriscigli la classe HTML "active".
+
     - MILESTONE 3 : Al click dell'utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
