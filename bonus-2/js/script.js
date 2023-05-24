@@ -11,6 +11,8 @@ let imgList = [
 
 // DICHIARAZIONE CONSTANTE CONTENENTE IL CONTENITORE DELLE SLIDE CON CLASSE "SLIDER"
 const sliderElement = document.querySelector('.slider');
+
+// DICHIARAZIONE CONSTANTE CONTENENTE IL CONTENITORE DELLE SLIDE_THUMBNAIL CON CLASSE "SLIDER_THUMBNAIL"
 const sliderThumbnailElement = document.querySelector('.slider_thumbnail');
 
 // DICHIARAZIONE VARIABILE SLIDER CONTENT DA INSERIRE DENTRO SLIDER ELEMENT
@@ -18,7 +20,6 @@ let sliderContent = "";
 
 // DICHIARAZIONE VARIABILE SLIDER THUMBNAIL CONTENT DA INSERIRE DENTRO SLIDER THUMBNAIL ELEMENT
 let sliderThumbnailContent = "";
-
 
 
 // CICLO FOR CHE SCORRE TUTTI GLI ELEMENTI DELL'ARRAY IMG_LIST
@@ -39,6 +40,7 @@ for (let i = 0; i < imgList.length; i++){
         <img src="${currentImages}" alt="slide-thumbnail-${i+1}">
     </div>`
 }
+
 
 // INSERIMENTO CONTENUTI SLIDER_CONTENT ALL'INTERNO DELLA CONSTANTE SLIDER_ELEMENT
 sliderElement.innerHTML += sliderContent;
@@ -75,104 +77,67 @@ const nextButton = document.getElementById('next');
 // UTENTE CLICCA SUL PREVIOUS BUTTON
 previousButton.addEventListener('click', function(){
 
+    // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+    allSlides[activeSlides].classList.remove('active');
+
+    // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
+
+    // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.add('opacity');
+
     if (activeSlides > 0){  // LA VARIABILE CONTANTORE INDICI NON È ARRIVATA AL PRIMO INDICE
-
-        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.remove('active');
-
-        // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
-
-        // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('opacity');
     
         // DECREMENTO VARIABILE CONTANTORE INDICI ELEMENTI HTML
         activeSlides--;
-    
-        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.add('active');
-
-        // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('selected_slide');
-
-        // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('opacity');
 
     } else{ // LA VARIABILE CONTANTORE INDICI È ARRIVATA AL PRIMO INDICE, LA FACCIAMO RIPARTIRE DALL'ULTIMO INDICE
-
-        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.remove('active');
-
-        // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
-
-        // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('opacity');
     
         // RESET VARIABILE CONTANTORE INDICI ELEMENTI HTML
         activeSlides = imgList.length - 1;
-    
-        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.add('active');
-
-        // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('selected_slide');
-
-        // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('opacity');
     }
+
+    // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+    allSlides[activeSlides].classList.add('active');
+
+    // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.add('selected_slide');
+
+    // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.remove('opacity');
 })
 
 
 // UTENTE CLICCA SUL NEXT BUTTON
 nextButton.addEventListener('click', function(){
 
+    // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+    allSlides[activeSlides].classList.remove('active');
+
+    // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
+
+    // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.add('opacity');
 
     if (activeSlides < imgList.length - 1){ // LA VARIABILE CONTANTORE INDICI NON È ARRIVATA ALL'ULTIMO INDICE
 
-        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.remove('active');
-
-        // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
-
-        // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('opacity');
-    
         // INCREMENTO VARIABILE CONTANTORE INDICI ELEMENTI HTML
         activeSlides++;
-    
-        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.add('active');
-
-        // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('selected_slide');
-
-        // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('opacity');
 
     } else{ // LA VARIABILE CONTANTORE INDICI È ARRIVATA ALL'ULTIMO INDICE, LA FACCIAMO RIPARTIRE DAL PRIMO INDICE
-
-        // RIMOZIONE CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.remove('active');
-
-        // RIMOZIONE CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('selected_slide');
-
-        // INSERIMENTO CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('opacity');
     
         // RESET VARIABILE CONTANTORE INDICI ELEMENTI HTML
         activeSlides = 0;
-    
-        // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
-        allSlides[activeSlides].classList.add('active');
-
-        // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.add('selected_slide');
-
-        // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
-        allSlidesThumbnail[activeSlides].classList.remove('opacity');
     }
+
+    // INSERIMENTO CLASSE "ACTIVE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE"
+    allSlides[activeSlides].classList.add('active');
+
+    // INSERIMENTO CLASSE "SELECTED_SLIDE" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.add('selected_slide');
+
+    // RIMOZIONE CLASSE "OPACITY" ALL'ELEMENTO HTML ATTUALE CON CLASSE "SLIDE_THUMBNAIL"
+    allSlidesThumbnail[activeSlides].classList.remove('opacity');
 })
 
